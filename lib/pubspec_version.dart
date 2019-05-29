@@ -104,6 +104,8 @@ abstract class UpdateVersion extends Command {
 
 class GetVersion extends Command {
   final Console console;
+  final name = 'get';
+  final description = 'Gets the current package version.';
 
   GetVersion(this.console);
 
@@ -113,10 +115,4 @@ class GetVersion extends Command {
     final pubSpec = await PubSpec.load(dir);
     console.log(pubSpec.version.toString());
   }
-
-  @override
-  String get description => "Gets the current package version.";
-
-  @override
-  String get name => "get";
 }
